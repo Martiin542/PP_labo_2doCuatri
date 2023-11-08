@@ -132,7 +132,10 @@ while run:
             pygame.mixer.music.unpause()
     #pausa        
     elif game_paused == True: 
-        pass
+        draw_text(screen, f'Game pause', font, TEXT_COL, SCREEN_W/2 - 100,0)
+        back_button = button(screen, SCREEN_W/2 - 60, SCREEN_H/2, 'assets\\back_button.png', 1)
+        if back_button:
+            game_paused = False
     elif game_over == True:
         label(screen, 400, 0,'assets\labelgameover.png', 2)
         draw_text(screen, f'Final Score: {score}', font, TEXT_COL, 0,300)
